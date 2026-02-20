@@ -1,5 +1,5 @@
 import { View } from "react-native";
-import Searcher from "../search_component";
+import Searcher from "../search_content";
 
 
 export default function Search() {
