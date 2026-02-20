@@ -44,12 +44,12 @@ export default function TabsLayout() {
             />
 
             <Tabs.Screen
-                name="shop"
+                name="message"
                 options={{
                     tabBarIcon: () => (
                         <Image
-                            source={require("../../assets/images/Shop-Icon.png")}
-                            style={{ width: 30, height: 30 }}
+                            source={require("../../assets/images/msg.png")}
+                            style={{ width: 20, height: 20 }}
                         />
                     ),
                 }}
