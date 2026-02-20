@@ -12,7 +12,7 @@ export default function ReelPage() {
     <View style={{ flex: 1, backgroundColor: "black" }}>
 
       <ImageBackground
-        source={require("../assets/images/instagram-feed-layout-01.jpg")}
+        source={require("../assets/images/reels.jpeg")}
         style={{
           position: "absolute",
           top: 0,
@@ -29,16 +29,41 @@ export default function ReelPage() {
           top: 50,
           width: "100%",
           flexDirection: "row",
-          justifyContent: "space-between",
           alignItems: "center",
-          paddingHorizontal: 20,
+          justifyContent: "space-between",
+          paddingHorizontal: 16,
         }}
       >
-        <Ionicons name="camera-outline" size={26} color="white" />
-        <Text style={{ color: "white", fontSize: 18, fontWeight: "bold" }}>
-          Reels
-        </Text>
-        <Feather name="send" size={24} color="white" />
+        <Ionicons name="add" size={28} color="white" />
+
+
+        <View style={{ flexDirection: "row", alignItems: "center" }}>
+          <Text
+            style={{
+              color: "white",
+              fontSize: 22,
+              fontWeight: "700",
+              marginRight: 8,
+            }}
+          >
+            Reels
+          </Text>
+
+          <Text
+            style={{
+              color: "gray",
+              fontSize: 22,
+              fontWeight: "600",
+            }}
+          >
+            Friends
+          </Text>
+        </View>
+
+
+        <View style={{ flexDirection: "row", alignItems: "center" }}>
+          <Feather name="send" size={24} color="white" />
+        </View>
       </View>
 
       <View
@@ -81,10 +106,10 @@ export default function ReelPage() {
         }}
       >
         <Text style={{ color: "white", fontWeight: "bold", marginBottom: 6 }}>
-          @username
+          cerealtwister
         </Text>
         <Text style={{ color: "white" }}>
-          This is a sample reel caption ✨ #fun #reactnative
+          Tag + Them + tell us what flavir they're...
         </Text>
       </View>
     </View>
