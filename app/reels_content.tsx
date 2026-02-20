@@ -1,20 +1,26 @@
 import { Feather, Ionicons } from "@expo/vector-icons";
 import React from "react";
-import { Text, TouchableOpacity, View } from "react-native";
+import {
+  ImageBackground,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 
 export default function ReelPage() {
   return (
     <View style={{ flex: 1, backgroundColor: "black" }}>
 
-      <View
+      <ImageBackground
+        source={require("../assets/images/instagram-feed-layout-01.jpg")}
         style={{
           position: "absolute",
           top: 0,
           left: 0,
           right: 0,
           bottom: 0,
-          backgroundColor: "#222",
         }}
+        resizeMode="cover"
       />
 
       <View

@@ -1,4 +1,5 @@
-import { Dimensions, FlatList, Image, Text, View } from "react-native";
+import { Ionicons } from "@expo/vector-icons";
+import { Dimensions, FlatList, Image, Text, TouchableOpacity, View } from "react-native";
 
 type User = {
     id: string;
@@ -164,14 +165,37 @@ export default function HomeContent() {
                             </View>
                         </View>
 
-                        <View style={{ paddingHorizontal: 15, paddingVertical: 10 }}>
-                            <Text style={{ fontWeight: "bold" }}>❤️ {item.likes} likes</Text>
+                        <View
+                            style={{
+                                flexDirection: "row",
+                                alignItems: "center",
+                                paddingHorizontal: 5,
+                                paddingVertical: 10,
+                            }}
+                        >
+                            <TouchableOpacity style={{ flexDirection: "row", alignItems: "center", marginRight: 10 }}>
+                                <Ionicons name="heart-outline" size={22} color="black" />
+                                <Text style={{ marginLeft: 6, fontWeight: "bold" }}>
+                                    {item.likes}
+                                </Text>
+                            </TouchableOpacity>
+
+                            <TouchableOpacity style={{ flexDirection: "row", alignItems: "center", marginRight: 10 }}>
+                                <Ionicons name="chatbubble-outline" size={22} color="black" />
+                                <Text style={{ marginLeft: 6 }}>
+                                    {item.comments}
+                                </Text>
+                            </TouchableOpacity>
+
+                            <TouchableOpacity>
+                                <Ionicons name="paper-plane-outline" size={22} color="black" />
+                            </TouchableOpacity>
+                        </View>
+
+                        <View style={{ paddingHorizontal: 10 }}>
                             <Text>
                                 <Text style={{ fontWeight: "bold" }}>{item.user.name} </Text>
                                 {item.description}
-                            </Text>
-                            <Text style={{ color: "gray", marginTop: 5 }}>
-                                View all {item.comments} comments
                             </Text>
                         </View>
                     </View>

@@ -1,3 +1,4 @@
+import { Ionicons } from "@expo/vector-icons";
 import { Pressable, Text, View } from "react-native";
 
 export default function HomeHeader() {
@@ -23,7 +24,7 @@ export default function HomeHeader() {
             </View>
 
             <Pressable onPress={() => { }}>
-                <Text style={{ fontSize: 25, marginTop: 10 }}>❤️</Text>
+                <Ionicons name="heart-outline" size={30} color="black" style={{ marginTop: 10 }} />
             </Pressable>
         </View>
     );
