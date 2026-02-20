@@ -29,56 +29,56 @@ const conversations: Conversation[] = [
     },
     {
         id: "4",
-        name: "Alex",
-        message: "Bro that fit is insane 🔥",
+        name: "Aiden",
+        message: "Nice one man!",
         avatar: require("../assets/images/profile-photo.png"),
     },
     {
         id: "5",
-        name: "Jenna",
-        message: "When are we posting?",
+        name: "Jaimee",
+        message: "Sent a GIF",
         avatar: require("../assets/images/profile-photo.png"),
     },
     {
         id: "6",
-        name: "Marcus",
-        message: "I sent the pics",
+        name: "Mike",
+        message: "Send me those?",
         avatar: require("../assets/images/profile-photo.png"),
     },
     {
         id: "7",
-        name: "Jenna",
-        message: "When are we posting?",
+        name: "Mary Ann",
+        message: "Sure wait...",
         avatar: require("../assets/images/profile-photo.png"),
     },
     {
         id: "8",
-        name: "Marcus",
-        message: "I sent the pics",
+        name: "Mary",
+        message: "Awesome!",
         avatar: require("../assets/images/profile-photo.png"),
     },
     {
         id: "9",
-        name: "Jenna",
-        message: "When are we posting?",
+        name: "James",
+        message: "Could you help me find those?",
         avatar: require("../assets/images/profile-photo.png"),
     },
     {
         id: "10",
-        name: "Marcus",
-        message: "I sent the pics",
+        name: "George",
+        message: "I need you to send that!",
         avatar: require("../assets/images/profile-photo.png"),
     },
     {
         id: "11",
-        name: "Jenna",
-        message: "When are we posting?",
+        name: "Harry",
+        message: "Wait what?",
         avatar: require("../assets/images/profile-photo.png"),
     },
     {
         id: "12",
-        name: "Marcus",
-        message: "I sent the pics",
+        name: "Manny",
+        message: "Yo",
         avatar: require("../assets/images/profile-photo.png"),
     },
 ];
@@ -113,64 +113,55 @@ function MessageItem({ item }: { item: Conversation }) {
 export default function Messages() {
     return (
         <View>
-            <View style={{
-                flexDirection: "row",
-                justifyContent: "center",
-                marginTop: 20,
-                marginBottom: 10
-
-            }}>
-                <Text style={{ fontSize: 15, fontWeight: "bold" }}>OOTD Everyday v</Text>
+            <View style={{ alignItems: "center", marginTop: 20, marginBottom: 10 }}>
+                <Text style={{ fontSize: 15, fontWeight: "bold" }}>
+                    OOTD Everyday v
+                </Text>
             </View>
-
-            <SearchBar />
-
-            <FlatList
-                data={conversations}
-                keyExtractor={(item) => item.id}
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                contentContainerStyle={{
-                    paddingHorizontal: 15,
-                }}
-                renderItem={({ item }) => (
-                    <View
-                        style={{
-                            alignItems: "center",
-                            marginRight: 15,
-                        }}
-                    >
-                        <Image
-                            source={item.avatar}
-                            style={{
-                                width: 80,
-                                height: 80,
-                                borderRadius: 30,
-                            }}
-                        />
-                        <Text style={{ fontSize: 12, marginTop: 5 }}>
-                            {item.name}
-                        </Text>
-                    </View>
-                )}
-            />
-
-            <View
-                style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                    margin: 10
-                }}>
-                <Text style={{ fontWeight: "bold" }}>Messages</Text>
-                <Text style={{ color: "grey" }}>Requests</Text>
-            </View>
-
             <FlatList
                 data={conversations}
                 keyExtractor={(item) => item.id}
                 renderItem={({ item }) => <MessageItem item={item} />}
-            />
+                contentContainerStyle={{ paddingBottom: 100 }}
+                ListHeaderComponent={
+                    <>
+                        <SearchBar />
+                        <FlatList
+                            data={conversations}
+                            horizontal
+                            keyExtractor={(item) => item.id}
+                            showsHorizontalScrollIndicator={false}
+                            contentContainerStyle={{ paddingHorizontal: 15 }}
+                            renderItem={({ item }) => (
+                                <View style={{ alignItems: "center", marginRight: 15 }}>
+                                    <Image
+                                        source={item.avatar}
+                                        style={{
+                                            width: 80,
+                                            height: 80,
+                                            borderRadius: 40,
+                                        }}
+                                    />
+                                    <Text style={{ fontSize: 12, marginTop: 5 }}>
+                                        {item.name}
+                                    </Text>
+                                </View>
+                            )}
+                        />
 
+                        <View
+                            style={{
+                                flexDirection: "row",
+                                justifyContent: "space-between",
+                                margin: 10,
+                            }}
+                        >
+                            <Text style={{ fontWeight: "bold" }}>Messages</Text>
+                            <Text style={{ color: "grey" }}>Requests</Text>
+                        </View>
+                    </>
+                }
+            />
         </View>
     );
 }
