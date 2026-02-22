@@ -1,4 +1,5 @@
 
+import { router } from "expo-router";
 import { Image, Pressable, Text, TouchableOpacity, View } from "react-native";
 
 export default function HeaderRow() {
@@ -35,8 +36,13 @@ export default function HeaderRow() {
                 style={{
                     flexDirection: "row",
                 }}>
-                <Image source={require("../assets/images/profile-photo.png")}
-                    style={{ height: 100, width: 100, marginLeft: 10 }} />
+                {/*Click on the profile icon to go to the edit screen, 
+                   *note there is no functional edit screen its just to show that we understand how to use the stack navigation*/}
+                <Pressable onPress={() => router.push("/(tabs)/profile/edit")}>
+                    <Image source={require("../assets/images/profile-photo.png")}
+                        style={{ height: 100, width: 100, marginLeft: 10 }} />
+                </Pressable>
+
                 <View style={{ marginLeft: 30, padding: 15, marginTop: 15 }}>
                     <Text style={{ marginLeft: 8, fontSize: 20, fontWeight: "bold" }}>53</Text>
                     <Text style={{ fontSize: 16 }}>Posts</Text>
